@@ -93,7 +93,7 @@ pipeline{
     }
     post {
         always {
-             mailext(
+            emailext(
                 attachLog: true,
                 subject: "'${currentBuild.result}'",
                 body: """Project: ${env.JOB_NAME}<br/>
