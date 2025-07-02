@@ -56,7 +56,7 @@ pipeline{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker system prune -f"
                        sh "docker container prune -f"
-                       sh "docker build --build-arg TMDB_V3_API_KEY=8b174e589e2f03f9fd8123907bd7800c -t netflix ."
+                       sh "docker build --build-arg 5b4306f8812871e8988de34a1eee8f6a -t netflix ."
                     }
                 }
             }
@@ -65,8 +65,8 @@ pipeline{
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "docker tag netflix avian19/netflix:latest "
-                       sh "docker push avian19/netflix:latest "
+                       sh "docker tag netflix adamumj/netflix:latest "
+                       sh "docker push adamumj/netflix:latest "
                     }
                 }
             }
